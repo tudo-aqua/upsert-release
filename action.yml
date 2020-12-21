@@ -1,0 +1,28 @@
+name: "Create or Update the release"
+
+description: "We want to create a nightly release. Therefore, we have to create or update the release."
+
+inputs:
+  tag_name:
+    description: "The name used for the tag associated with this release"
+    default: "nightly"
+    required: true
+  release_name:
+    description: "The name used for this release"
+    default: "nightly"
+    required: true
+  body:
+    description: "The body for this release"
+    default: "This is the head of the current master branch"
+    required: true
+  draft:
+    description: "Is it a draft branch?"
+  prerelease:
+    description: "Is it a prerelease?"
+  token:
+    description: "Token for one of these security things"
+
+
+runs:
+  using: "node12"
+  main: "dist/index.js"
